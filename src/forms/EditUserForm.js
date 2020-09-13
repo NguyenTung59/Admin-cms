@@ -38,7 +38,9 @@ const EditUserForm = props => {
 	};
 
 	// handle Reset
-	const handleReset = () => {};
+	const handleReset = () => {
+		setUser(initialUser);
+	};
 
 	return (
 		<div>
