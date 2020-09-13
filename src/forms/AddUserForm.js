@@ -39,7 +39,11 @@ const AddUserForm = props => {
 		setVisible(false);
 	};
 	// handle Submit
-	const handleSubmit = e => {};
+	const handleSubmit = e => {
+		e.preventDefault();
+		if (user.name && user.address && user.website)
+			handleChange(e, props.addUser(user));
+	};
 
 	return (
 		<div>
