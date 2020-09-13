@@ -11,8 +11,24 @@ const layout = {
 };
 
 const EditUserForm = props => {
+	const [dateTime, setDateTime] = useState(new Date());
+
+	const initialUser = {
+		id: null,
+		name: '',
+		address: '',
+		website: '',
+		total: 0,
+		date: dateTime.toLocaleDateString('en-GB')
+	};
+
+	const [user, setUser] = useState(initialUser);
+
 	// handle onChange
-	const handleChange = e => {};
+	const handleChange = e => {
+		const { name, value } = e.target;
+		setUser({ ...user, [name]: value });
+	};
 
 	// handle Submit
 	const handleSubmit = e => {};
