@@ -7,7 +7,17 @@ import AddUserForm from './forms/AddUserForm';
 import EditUserForm from './forms/EditUserForm';
 
 function App() {
-	const [editting, setEditting] = useState(false);
+	const [dateTime, setDateTime] = useState(new Date());
+
+	const initialUser = {
+		id: null,
+		name: '',
+		address: '',
+		website: '',
+		total: 0,
+		date: dateTime.toLocaleDateString('en-GB')
+	};
+	const [editing, setEditing] = useState(false);
 	const [users, setUsers] = useState([]);
 
 	//Get Data
@@ -28,13 +38,32 @@ function App() {
 		setUsers(users.filter(user => user.id !== id));
 	};
 	//Edit user
+	const [userCurrent, setUserCurrent] = useState(initialUser);
+
+	const editUser = (id, user) => {
+		setEditing(true);
+		setUserCurrent(user);
+	};
 	//Update user
+	const updateUser = newUser => {
+		setUsers(users.map(user => (user.id === newUser.id ? newUser : user)));
+		setUserCurrent(initialUser);
+		setEditing(false);
+	};
 
 	return (
 		<div className="App">
-			{editting ? <EditUserForm /> : <AddUserForm addUser={addUser} />}
+			{editing ? (
+				<EditUserForm
+					editing={editing}
+					updateUser={updateUser}
+					userCurrent={userCurrent}
+				/>
+			) : (
+				<AddUserForm addUser={addUser} />
+			)}
 
-			<UserTable users={users} deleteUser={deleteUser} />
+			<UserTable users={users} deleteUser={deleteUser} editUser={editUser} />
 			<Button onClick={getData}>Get Data</Button>
 			<Button onClick={hideData}>Hide Data</Button>
 		</div>
