@@ -32,13 +32,9 @@ function App() {
 
 	return (
 		<div className="App">
-			{editting ? (
-				<EditUserForm />
-			) : (
-				<AddUserForm addUser={addUser} deleteUser={deleteUser} />
-			)}
+			{editting ? <EditUserForm /> : <AddUserForm addUser={addUser} />}
 
-			<UserTable users={users} />
+			<UserTable users={users} deleteUser={deleteUser} />
 			<Button onClick={getData}>Get Data</Button>
 			<Button onClick={hideData}>Hide Data</Button>
 		</div>
