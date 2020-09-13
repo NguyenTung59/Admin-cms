@@ -11,8 +11,12 @@ function App() {
 	const [users, setUsers] = useState([]);
 
 	//Get Data
-	const getDate = () => {
+	const getData = () => {
 		setUsers(UserData);
+	};
+	//Hide Data
+	const hideData = () => {
+		setUsers([]);
 	};
 	//Add user
 	//Delete user
@@ -24,7 +28,8 @@ function App() {
 			{editting ? <EditUserForm /> : <AddUserForm />}
 
 			<UserTable users={users} />
-			<Button onClick={getDate}>Get Data</Button>
+			<Button onClick={getData}>Get Data</Button>
+			<Button onClick={hideData}>Hide Data</Button>
 		</div>
 	);
 }
