@@ -55,7 +55,7 @@ function App() {
 		<div className="App">
 			{editing ? (
 				<EditUserForm
-					editing={editing}
+					setEditing={setEditing}
 					updateUser={updateUser}
 					userCurrent={userCurrent}
 				/>
