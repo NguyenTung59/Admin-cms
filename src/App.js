@@ -19,6 +19,10 @@ function App() {
 		setUsers([]);
 	};
 	//Add user
+	const addUser = user => {
+		user.id = users.length + 1;
+		setUsers([...users, user]);
+	};
 	//Delete user
 	//Edit user
 	//Update user
