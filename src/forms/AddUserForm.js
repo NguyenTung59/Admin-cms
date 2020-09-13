@@ -29,7 +29,10 @@ const AddUserForm = props => {
 	};
 
 	//handle Change
-	const handleChange = e => {};
+	const handleChange = e => {
+		const { name, value } = e.target;
+		setUser({ ...user, [name]: value });
+	};
 	//handle Cancel
 	const handleCancel = () => {
 		setUser(initialUser);
