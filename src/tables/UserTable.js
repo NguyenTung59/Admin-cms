@@ -35,8 +35,8 @@ const UserTable = props => {
 		{
 			title: 'Date',
 			key: 'date',
-			dataIndex: 'date'
-			// render: date => <div>{date}</div>
+			dataIndex: 'date',
+			render: date => <div>{date}</div>
 		},
 		{
 			title: 'Act',
