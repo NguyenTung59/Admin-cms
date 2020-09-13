@@ -5,6 +5,13 @@ import EditUserForm from './forms/EditUserForm';
 
 function App() {
 	const [editting, setEditting] = useState(false);
+
+	//Get Data
+	//Add user
+	//Delete user
+	//Edit user
+	//Update user
+
 	return (
 		<div className="App">
 			{editting ? <EditUserForm /> : <AddUserForm />}
