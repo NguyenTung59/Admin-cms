@@ -1,7 +1,8 @@
 import React from 'react';
-import { Button, Popconfirm } from 'antd';
+import 'antd/dist/antd.css';
+import { Table, Button, Popconfirm } from 'antd';
 
-const UserTable = () => {
+const UserTable = props => {
 	const columns = [
 		{
 			title: 'No.',
