@@ -7,7 +7,7 @@ import AddUserForm from './forms/AddUserForm';
 import EditUserForm from './forms/EditUserForm';
 
 function App() {
-	const [dateTime, setDateTime] = useState(new Date());
+	const dateTime = useState(new Date());
 
 	const initialUser = {
 		id: null,
