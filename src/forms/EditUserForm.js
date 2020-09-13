@@ -14,7 +14,7 @@ const EditUserForm = props => {
 	useEffect(() => {
 		setUser(props.userCurrent);
 	}, [props]);
-	const [dateTime, setDateTime] = useState(new Date());
+	const [dateTime] = useState(new Date());
 
 	const initialUser = {
 		id: null,

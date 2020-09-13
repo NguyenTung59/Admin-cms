@@ -11,7 +11,7 @@ const layout = {
 };
 
 const AddUserForm = props => {
-	const [dateTime, setDateTime] = useState(new Date());
+	const [dateTime] = useState(new Date());
 	const [visible, setVisible] = useState(false);
 	const initialUser = {
 		id: null,
