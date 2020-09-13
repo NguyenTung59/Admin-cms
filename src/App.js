@@ -24,12 +24,19 @@ function App() {
 		setUsers([...users, user]);
 	};
 	//Delete user
+	const deleteUser = id => {
+		setUsers(users.filter(user => user.id !== id));
+	};
 	//Edit user
 	//Update user
 
 	return (
 		<div className="App">
-			{editting ? <EditUserForm /> : <AddUserForm />}
+			{editting ? (
+				<EditUserForm />
+			) : (
+				<AddUserForm addUser={addUser} deleteUser={deleteUser} />
+			)}
 
 			<UserTable users={users} />
 			<Button onClick={getData}>Get Data</Button>
