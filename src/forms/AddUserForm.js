@@ -11,13 +11,30 @@ const layout = {
 };
 
 const AddUserForm = props => {
+	const [dateTime, setDateTime] = useState(new Date());
+	const [visible, setVisible] = useState(false);
+	const initialUser = {
+		id: null,
+		name: '',
+		address: '',
+		website: '',
+		total: 0,
+		date: dateTime.toLocaleDateString('en-GB')
+	};
+	const [user, setUser] = useState(initialUser);
+
 	//show form
-	const showForm = () => {};
+	const showForm = () => {
+		setVisible(true);
+	};
 
 	//handle Change
 	const handleChange = e => {};
 	//handle Cancel
-	const handleCancel = () => {};
+	const handleCancel = () => {
+		setUser(initialUser);
+		setVisible(false);
+	};
 	// handle Submit
 	const handleSubmit = e => {};
 
