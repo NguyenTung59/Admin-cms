@@ -31,7 +31,11 @@ const EditUserForm = props => {
 	};
 
 	// handle Submit
-	const handleSubmit = e => {};
+	const handleSubmit = e => {
+		e.preventDefault();
+		if (user.name && user.address && user.website)
+			handleChange(e, props.updateUser(user));
+	};
 
 	// handle Reset
 	const handleReset = () => {};
